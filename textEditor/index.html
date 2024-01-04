@@ -1,1 +1,46 @@
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
+body {
+  margin: 0;
+}
+
+.text-editor {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  color: #f0f6f0;
+  width: 100%;
+  height: 100%;
+  background: #222323;
+  resize: none;
+  border: none;
+}
+
+.text-editor:focus {
+  border: none;
+}
+
+.text-area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #222323;
+}
+</style>
+<script>
+function checkLength(txt){
+  if(txt.length > 30){
+    txt = txt.substring(1);
+    document.getElementById("textEditor").value = txt;
+  }  
+}
+</script>
+</head>
+<body>
+<div class="text-area">
+  <textarea oninput="checkLength(this.value)" id="textEditor" class="text-editor" placeholder="Really Advanced Text Editor ;)"></textarea>
+</div>
+</body>
+</html>
